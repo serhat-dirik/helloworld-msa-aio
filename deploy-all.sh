@@ -1,16 +1,16 @@
 # !/bin/bash
-oc new-project helloworld-msa
-cd hola
-mvn package fabric8:deploy
-cd ..
-cd aloha
-mvn package fabric8:deploy
-cd ..
-cd ola
-mvn package fabric8:deploy
-cd ..
+#oc new-project helloworld-msa
+#cd hola
+#mvn package fabric8:deploy
+#cd ..
+#cd aloha
+#mvn package fabric8:deploy
+#cd ..
+#cd ola
+#mvn package fabric8:deploy
+#cd ..
 cd bonjour
-oc new-build --binary --name=bonjour -l app=bonjour
+#oc new-build --binary --name=bonjour -l app=bonjour
 npm install; oc start-build bonjour --from-dir=. --follow
 oc new-app bonjour -l app=bonjour
 oc expose service bonjour
